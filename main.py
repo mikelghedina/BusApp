@@ -15,6 +15,7 @@ def createBusTickets():
     clear_screen()
     return buses
 
+createBusTickets()
 
 def sellTickets(tl, numSell, busId):
     if 0 <= busId < len(tl):
