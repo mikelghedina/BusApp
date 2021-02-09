@@ -1,4 +1,5 @@
-from busTickets import Tickets
+from busTickets import Ticket
+from Bus import Bus
 import os
 
 
@@ -7,12 +8,10 @@ def clear_screen():
 
 def createBusTickets():
     #print(bus + busLetters + "\n")
-    buses = []
     total_buses = int(input("Escribir el numero de buses que tiene la organización: "))
     total_places = int(input("Escribir el numero de plazas totales del bus: "))
     # [VENDIDOS(0),RESTANTES(1)]
-    for i in range(total_buses):
-        buses.append([0, total_places])
+    buses = Bus.generarAutobuses(total_buses, total_places)
     clear_screen()
     return buses
 
