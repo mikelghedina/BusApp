@@ -5,6 +5,50 @@ import os
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+def createBusTickets():
+    #print(bus + busLetters + "\n")
+    buses = []
+    total_buses = int(input("Escribir el numero de buses que tiene la organización: "))
+    total_places = int(input("Escribir el numero de plazas totales del bus: "))
+    # [VENDIDOS(0),RESTANTES(1)]
+    for i in range(total_buses):
+        buses.append([0, total_places])
+    clear_screen()
+    return buses
+
+
+def sellTickets(tl, numSell, busId):
+    if 0 <= busId < len(tl):
+        if numSell <= tl[busId][1]:
+            tl[busId][1] -= numSell
+            tl[busId][0] += numSell
+            return "Vendidos " + str(numSell) + " tickets"
+        else:
+            return "Error, no se pueden vender mas tickets de los disponibles"
+    else:
+        return "Error, la compañia no tiene tantos buses porque no tiene dinero."
+
+
+def returnTickets(tl, numReturn, busId):
+    if 0 <= busId < len(tl):
+        if numReturn <= tl[busId][0]:
+            tl[busId][1] += numReturn
+            tl[busId][0] -= numReturn
+            return "Devueltos " + str(numReturn) + " tickets"
+        else:
+            return "Error, no se pueden devolver mas tickets de los vendidos"
+    else:
+        return "Error, la compañia no tiene tantos buses porque no tiene dinero."
+
+
+def sellState(tl):
+    info = ""
+    for i in range(len(tl)):
+        info += "bus" +"\nBus: " + str(i) + "\nTotal Plazas: " + str(tl[i][0] + tl[i][1]) + "\nTickets vendidos: " + str(
+            tl[i][0]) + "\nTickets restantes: " + str(tl[i][1]) + "\n"
+    return info
+
+
 def ventaTickets():
     #buses = createBusTickets()
     # print(buses)
