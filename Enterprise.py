@@ -1,6 +1,7 @@
 from Bus import Bus
 from Ticket import Ticket
 
+
 class Enterprise:
 
     def __init__(self):
@@ -22,6 +23,3 @@ class Enterprise:
 
         for i in range(total_buses):
             self.busesList.append(Bus(i, total_places))
-
-
-
