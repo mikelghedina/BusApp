@@ -1,9 +1,10 @@
-from busTickets import Ticket
+from Ticket import Ticket
+
 
 class Bus:
-    def __init__(self, id):
+    def __init__(self, id, places):
         self.id = id
-        self.arrTickets = []
+        self.ticketsList = self.createTicketsList(places)
 
     def getIdBus(self):
         return self.id
@@ -11,13 +12,17 @@ class Bus:
     def setIdBus(self, id):
         self.id = id
 
-    def setArrTickets(self, arrTickets):
-        self.arrTickets = arrTickets
-
-    def getArrTickets(self):
-        for i in self.arrTickets:
-            return i
+    def getTicketsList(self):
+        auxString = "Bus con id: " + str(self.id) + "\n"
+        for i in self.ticketsList:
+            auxString += i.__str__()
+        return auxString
 
     def __str__(self):
-        return str(self.id) + self.getArrTickets()
+        return self.getTicketsList()
 
+    def createTicketsList(self, places):
+        auxTicketsList = []
+        for i in range(0, places):
+            auxTicketsList.append(Ticket(i))
+        return auxTicketsList
