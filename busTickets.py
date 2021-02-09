@@ -30,7 +30,7 @@ class Ticket:
         self.lastName = lastName
 
     def __str__(self):
-        return str(self.busId) + str(self.place) + str(self.name) + str(self.lastName)
+        return "BusId:" + str(self.busId) + ", Num Plaza: " + str(self.place) + ", Nombre: " + str(self.name) + ", Apellido: " + str(self.lastName)
 
 
 

@@ -1,32 +1,28 @@
 from busTickets import Ticket
 
+
 class Bus:
     """ Clase Autobus """
 
     def __init__(self, id):
         self.id = id
-
         self.arrTickets = []
-    
+
     """ STATIC METHODS """
+
     @staticmethod
-    def generarAutobuses(cantAutobuses, cantPlazas):
+    def generarAutobuses(cantAutobuses):
         arrAutobuses = []
-        arrTickets = []
 
-        for id in range(0, cantAutobuses):
-            bus = Bus(id)
-            for i in range(cantPlazas):
-                arrTickets.append(Ticket(bus.getIdBus(), i))
-
-            bus.setArrTickets(arrTickets)
+        for i in cantAutobuses:
+            bus = Bus(i)
             arrAutobuses.append(bus)
-        for bus in arrAutobuses:
-            print(bus.arrTickets.__getitem__())
+            print(bus)
+
         return arrAutobuses
 
-
     """GETTERS AND SETTERS"""
+
     def getIdBus(self):
         return self.id
 
@@ -34,10 +30,8 @@ class Bus:
         self.arrTickets = arrTickets
 
     def __str__(self):
-        return str(self.id) + " " +
-     
+        return str(self.id) + self.getArrTickets()
 
-
-  
-
-
+    def getArrTickets(self):
+        for i in self.arrTickets:
+            return i
