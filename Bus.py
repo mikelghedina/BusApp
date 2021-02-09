@@ -26,3 +26,9 @@ class Bus:
         for i in range(0, places):
             auxTicketsList.append(Ticket(i))
         return auxTicketsList
+
+    def sellTickets(self, numTicketsToSell):
+        if numTicketsToSell >= 0 and numTicketsToSell < len(self.ticketsList):
+            del self.ticketsList[0:numTicketsToSell]
+        else:
+            message = "You cannot sell more tickets"
