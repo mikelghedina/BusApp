@@ -31,15 +31,13 @@ class Enterprise:
         else:
             print("This bus doesn't exist, try again.")
 
-
         return False
 
     def getBusOfList(self, numBus):
         for bus in self.busesList:
             if bus.getIdBus() == numBus:
                 return bus
-
-
+        return False
 
 
 
