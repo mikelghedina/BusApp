@@ -24,9 +24,9 @@ class Enterprise:
         for i in range(total_buses):
             self.busesList.append(Bus(i, total_places))
 
-    def sellTickets(self, busId, numTicketsToSell):
+    def sellTickets(self, busId, numTicketsToSell, name, lastname):
         if busId >= 0 and busId < len(self.busesList):
-            self.busesList[busId].sellTickets(numTicketsToSell)
+            self.busesList[busId].sellTickets(numTicketsToSell, name, lastname)
         else:
             message = "This bus doesn't exist, try again."
 
