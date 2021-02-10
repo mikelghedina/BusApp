@@ -15,9 +15,8 @@ while not closeMenu:
 4.Exit""")
 
     option = int(input("Introduce la opcion deseada: "))
-
+    busId = int(input("Choose the bus: "))
     if option == 1:
-        busId = int(input("Choose the bus: "))
         numTicketsToSell = int(input("Choose the number of tickets you want to sell: "))
         name = input("Write your name: ")
         lastname = input("Write your last name: ")
@@ -26,7 +25,7 @@ while not closeMenu:
     elif option == 2:
         print("Devolver TIckets")
     elif option == 3:
-        print("Ver status")
+        print(enterprise1.busesList[busId])
     elif option == 4:
         closeMenu = True
         #Exit

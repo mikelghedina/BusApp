@@ -16,6 +16,7 @@ class Enterprise:
     def __str__(self):
         return self.getBusesList()
 
+
     def createBuses(self):
 
         total_buses = int(input("Escribir el numero de buses que tiene la organización: "))
