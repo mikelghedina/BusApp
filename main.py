@@ -20,13 +20,13 @@ while not closeMenu:
         busId = int(input("Choose the bus: "))
         if enterprise1.getBusOfList(busId) != False:
             bus = enterprise1.getBusOfList(busId)
-            numTicketsToSell = int(input("Choose the number of tickets you want to sell: "))
-            if len(bus.ticketsList)-1 == numTicketsToSell:
+            numticketSold = int(input("Choose the number of tickets you want to sell: "))
+            if bus.getTicketOfList(numticketSold) !=False:
                 name = input("Write your name: ")
                 lastname = input("Write your last name: ")
-                enterprise1.sellTickets(busId, numTicketsToSell, name, lastname)
+                enterprise1.sellTickets(busId, numticketSold, name, lastname)
             else:
-                print("Those many are not available")
+                print("This place doesn't exist")
         else:
             print("This bus doesn't exist")
             #print(enterprise1)

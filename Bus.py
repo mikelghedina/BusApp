@@ -25,8 +25,7 @@ class Bus:
         for ticket in self.ticketsList:
             if ticket.getPlace() == numPlace:
                 return ticket
-            else:
-                return False
+        return False
 
     def createTicketsList(self, places):
         auxTicketsList = []
@@ -34,11 +33,10 @@ class Bus:
             auxTicketsList.append(Ticket(i))
         return auxTicketsList
 
-    def sellTickets(self, numTicketsToSell, name, lastname):
-        if numTicketsToSell >= 0 and numTicketsToSell < len(self.ticketsList):
-            for i in self.ticketsList[0:numTicketsToSell]:
-                i.setName(name)
-                i.setLastName(lastname)
+    def sellTickets(self, numticketSold, name, lastname):
+        if numticketSold >= 0 and numticketSold < len(self.ticketsList)-1:
+            self.ticketsList[numticketSold].setName(name)
+            self.ticketsList[numticketSold].setLastName(lastname)
         else:
             return "You cannot sell more tickets"
 
