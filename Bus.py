@@ -21,6 +21,13 @@ class Bus:
     def __str__(self):
         return self.getTicketsList()
 
+    def getTicketOfList(self, numPlace):
+        for ticket in self.ticketsList:
+            if ticket.getPlace() == numPlace:
+                return ticket
+            else:
+                return False
+
     def createTicketsList(self, places):
         auxTicketsList = []
         for i in range(0, places):
