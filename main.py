@@ -24,7 +24,21 @@ while not closeMenu:
         enterprise1.sellTickets(busId, numTicketsToSell, name, lastname)
         print(enterprise1)
     elif option == 2:
-        print("Devolver TIckets")
+        if enterprise1.getBusOfList(busId) != False:
+            numPlace = int(input('Introduce el numero de asiento que quieres devolver: '))
+            bus = enterprise1.getBusOfList(busId)
+
+            if bus.returnTicket(numPlace):
+                print('Se ha devuelto el ticket correctamente')
+            else:
+                print('El ticket que quieres devolver no existe')
+
+
+        else:
+            print('No existe el bus seleccionado')
+
+
+
     elif option == 3:
         print(enterprise1.busesList[busId])
     elif option == 4:

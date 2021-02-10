@@ -36,6 +36,8 @@ class Bus:
             return "You cannot sell more tickets"
 
     def returnTicket(self, numPlace):
+        numPlace = numPlace - 1
+        print(self.getTicketsList())
         if numPlace < len(self.ticketsList) and self.ticketsList[numPlace].name != None:
             self.ticketsList[numPlace].name = None
             self.ticketsList[numPlace].lastname = None
