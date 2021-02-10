@@ -29,6 +29,8 @@ class Bus:
 
     def sellTickets(self, numTicketsToSell):
         if numTicketsToSell >= 0 and numTicketsToSell < len(self.ticketsList):
-            del self.ticketsList[0:numTicketsToSell]
+            del self.ticketsList[:numTicketsToSell]
         else:
             message = "You cannot sell more tickets"
+
+    #def returnTickets(self, ):
