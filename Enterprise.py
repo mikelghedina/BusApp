@@ -29,7 +29,8 @@ class Enterprise:
         if busId >= 0 and busId < len(self.busesList):
             self.busesList[busId].sellTickets(numTicketsToSell, name, lastname)
         else:
-            message = "This bus doesn't exist, try again."
+            print("This bus doesn't exist, try again.")
+
 
 
 

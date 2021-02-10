@@ -33,7 +33,7 @@ class Bus:
                 i.setName(name)
                 i.setLastName(lastname)
         else:
-            message = "You cannot sell more tickets"
+            return "You cannot sell more tickets"
 
     def returnTicket(self, numPlace):
         if numPlace < len(self.ticketsList) and self.ticketsList[numPlace].name != None:

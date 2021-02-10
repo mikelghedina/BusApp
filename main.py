@@ -18,6 +18,7 @@ while not closeMenu:
     busId = int(input("Choose the bus: "))
     if option == 1:
         numTicketsToSell = int(input("Choose the number of tickets you want to sell: "))
+
         name = input("Write your name: ")
         lastname = input("Write your last name: ")
         enterprise1.sellTickets(busId, numTicketsToSell, name, lastname)
