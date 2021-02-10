@@ -5,6 +5,7 @@ class Bus:
     def __init__(self, id, places):
         self.id = id
         self.ticketsList = self.createTicketsList(places)
+        # comentario
 
     def getIdBus(self):
         return self.id
