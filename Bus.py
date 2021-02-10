@@ -27,18 +27,18 @@ class Bus:
             auxTicketsList.append(Ticket(i))
         return auxTicketsList
 
-    def sellTickets(self, numTicketsToSell):
+    def sellTickets(self, numTicketsToSell, name, lastname):
         if numTicketsToSell >= 0 and numTicketsToSell < len(self.ticketsList):
-            del self.ticketsList[0:numTicketsToSell]
+            for i in self.ticketsList[0:numTicketsToSell]:
+                i.setName(name)
+                i.setLastName(lastname)
         else:
             message = "You cannot sell more tickets"
 
-
-    def returnTicket(self,numPlace):
+    def returnTicket(self, numPlace):
         if numPlace < len(self.ticketsList) and self.ticketsList[numPlace].name != None:
             self.ticketsList[numPlace].name = None
             self.ticketsList[numPlace].lastname = None
             return True
         else:
             return False
-
